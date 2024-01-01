@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>QQ、微信防红接口 -</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>QQ、微信防红接口</h1>
+				<p>在下方输入需要跳转的链接，即可生成防红接口。<br>
+					</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form id="signup-form" method="post">
+				<input type="url" name="url" id="url" placeholder="需要跳转的网址" />
+				<input type="button" value="生成" onclick="build_url_2()"/>
+			</form>
+			<p id="b_url"></p>
+
+			<script src="./assets/js/build_url.js"></script>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+
+					<li><a href="https://t.me/BA_yuming" class="icon brands fa-telegeam" target="_blank"><span class="label">Telegram</span></a></li>
+
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Powered by <a href="https://t.me/BA_yuming" target="_blank">WSH</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+		<script>
+		function build_url_2(){
+    var url = encodeURI(decodeURI(document.querySelector('#url').value));
+    if (url === "" || url.indexOf("http") === -1){
+        document.getElementById("b_url").innerHTML=`输入的不是链接或者未加http请求头！`;
+    }
+    else {
+        url = document.location.href + "api/?base64=" + Base64.encodeURI(url);
+        document.getElementById("b_url").innerHTML=`<a href=${url} target='_blank'>${url}</a>`;
+    }
+		}
+		</script>
+			<script src="assets/js/main.js"></script>
+			<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+            <script>LA.init({id:"KHaAV3KR6FBCe4pt",ck:"KHaAV3KR6FBCe4pt",autoTrack:true,hashMode:true})</script>
+		<script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.5/base64.min.js"></script>
+	</body>	
+</html>
